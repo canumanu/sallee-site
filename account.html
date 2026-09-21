@@ -1,0 +1,355 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>My account — Sallee Horse Vans</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+<style>
+  .inv-head, .inv-row { grid-template-columns: 44px 1.1fr 1fr 2fr 1fr 1.1fr; }
+  .hist-head, .hist-row { grid-template-columns: 1fr 1.2fr 1.6fr 1fr; }
+  @media (max-width: 820px) { .inv-row, .hist-row { grid-template-columns: minmax(0,1fr); } }
+</style>
+</head>
+<body>
+
+<div class="proto">Concept build for review — <strong>not the live site</strong>. Horses, invoices and documents below are sample data.</div>
+
+<div class="topbar">
+  <div class="wrap">
+    <span>Signed in as <strong style="color: var(--cream);">[FARM / STABLE NAME]</strong> · Account #[00000]</span>
+    <div class="topbar-group">
+      <a href="tel:+18009678267">Dispatch (800) 967-8267</a>
+      <a href="#help">Help</a>
+      <a href="login.html">Sign out</a>
+    </div>
+  </div>
+</div>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html">
+      <span class="brand-mark">SALLEE</span>
+      <span class="brand-sub">My account</span>
+    </a>
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="availability.html">Open space</a>
+      <a href="calendar.html">Events calendar</a>
+      <a href="planner.html">Plan a shipment</a>
+      <a class="btn btn--gold btn--sm" href="planner.html">Request shipping</a>
+    </nav>
+  </div>
+</header>
+
+<section style="padding: 40px 0 24px;">
+  <div class="wrap row-between">
+    <div class="stack" style="gap: 10px;">
+      <span class="eyebrow">Good morning</span>
+      <h1 style="font-size: clamp(34px, 4.4vw, 52px);">[FARM / STABLE NAME]</h1>
+      <span class="muted">2 horses on the road · Next arrival [TRACK], 3:40 p.m. today</span>
+    </div>
+    <div class="row-center" style="gap: 16px;">
+      <div class="card" style="min-width: 210px; gap: 6px; padding: 20px 26px;">
+        <span class="small" style="letter-spacing: .08em; text-transform: uppercase; color: var(--muted); font-weight: 600;">Balance due</span>
+        <span style="font-family: var(--serif); font-size: 36px; font-weight: 600; color: var(--dark);">$3,410.00</span>
+        <span class="small" style="color: var(--brass); font-weight: 600;">Oldest due Oct 12</span>
+      </div>
+      <button class="btn btn--green btn--lg" type="button" data-goto="billing">Pay now</button>
+    </div>
+  </div>
+</section>
+
+<div class="wrap">
+  <div class="tabs" data-tabs="#account-panels" role="tablist" aria-label="Account sections">
+    <button class="tab" type="button" role="tab" data-tab="shipments" aria-selected="true">Shipments</button>
+    <button class="tab" type="button" role="tab" data-tab="billing" aria-selected="false">Invoices &amp; payment</button>
+    <button class="tab" type="button" role="tab" data-tab="docs" aria-selected="false">Documents</button>
+    <button class="tab" type="button" role="tab" data-tab="notes" aria-selected="false">Notes &amp; preferences</button>
+  </div>
+</div>
+
+<section id="account-panels" style="padding: 32px 0 64px;">
+  <div class="wrap">
+
+    <!-- ---------- shipments ---------- -->
+    <div data-panel="shipments">
+      <div class="stack" style="gap: 28px;">
+        <div class="grid grid-2">
+          <div class="card" style="border-radius: 20px; gap: 18px;">
+            <div class="row-between" style="align-items: center;">
+              <span class="tag tag--racing">On the van now</span>
+              <span class="small muted">Order #[00000] · Van [00]</span>
+            </div>
+            <div class="stack" style="gap: 6px;">
+              <span style="font-size: 23px; font-weight: 700;">[HORSE NAME], [HORSE NAME]</span>
+              <span class="muted">[ORIGIN FARM], Lexington KY → [DESTINATION TRACK], Elmont NY</span>
+            </div>
+            <div style="display: flex; align-items: center;">
+              <span style="width: 14px; height: 14px; border-radius: 999px; background: var(--green);"></span>
+              <span style="flex-grow: 1; height: 3px; background: var(--green);"></span>
+              <span style="width: 14px; height: 14px; border-radius: 999px; background: var(--green);"></span>
+              <span style="flex-grow: 1; height: 3px; background: var(--green);"></span>
+              <span style="width: 18px; height: 18px; border-radius: 999px; background: var(--gold); border: 3px solid var(--dark);"></span>
+              <span style="flex-grow: 1; height: 3px; background: var(--line);"></span>
+              <span style="width: 14px; height: 14px; border-radius: 999px; background: var(--line);"></span>
+            </div>
+            <div class="row-between small muted" style="align-items: center;">
+              <span>Loaded 6:10a</span><span>Left KY 7:00a</span><span>Near Wheeling WV</span><span>ETA 3:40p</span>
+            </div>
+            <div class="row-center">
+              <a class="btn btn--green btn--sm" href="#track">Track live</a>
+              <button class="btn btn--outline btn--sm" type="button" data-goto="docs">Paperwork</button>
+              <a class="btn btn--quiet btn--sm" href="#message">Message dispatch</a>
+            </div>
+          </div>
+
+          <div class="card" style="border-radius: 20px; gap: 18px;">
+            <div class="row-between" style="align-items: center;">
+              <span class="tag tag--sale">Scheduled</span>
+              <span class="small muted">Order #[00000] · Van assigned [DATE]</span>
+            </div>
+            <div class="stack" style="gap: 6px;">
+              <span style="font-size: 23px; font-weight: 700;">[HORSE NAME]</span>
+              <span class="muted">[ORIGIN TRACK] → [DESTINATION FARM], Ocala FL</span>
+            </div>
+            <div class="card card--plain" style="gap: 6px; padding: 16px; border: 0;">
+              <span class="small" style="font-weight: 700; color: var(--dark);">Pickup window Tue Oct 6, 7–10 a.m.</span>
+              <span class="small muted">Stall space reserved: 1.5 · Health papers due 72 hours out</span>
+            </div>
+            <div class="row-center">
+              <a class="btn btn--outline btn--sm" href="planner.html">Change details</a>
+              <button class="btn btn--quiet btn--sm" type="button" data-goto="notes">Add a handling note</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="stack" style="gap: 14px;">
+          <div class="row-between" style="align-items: center;">
+            <h2 style="font-size: 30px;">Shipping history</h2>
+            <a href="#history" style="font-weight: 700;">Download 2026 summary →</a>
+          </div>
+          <div class="table">
+            <div class="table-head hist-head"><span>Date</span><span>Horse(s)</span><span>Route</span><span>Documents</span></div>
+            <div class="table-row hist-row"><span style="font-weight: 600;">Aug 21, 2026</span><span>[HORSE], [HORSE], [HORSE]</span><span class="muted">Ocala, FL → [FARM], KY</span><a href="#bol" style="font-weight: 600;">Bill of lading (PDF)</a></div>
+            <div class="table-row hist-row"><span style="font-weight: 600;">Aug 02, 2026</span><span>[HORSE NAME]</span><span class="muted">Timonium, MD → Elmont, NY</span><a href="#bol" style="font-weight: 600;">Bill of lading (PDF)</a></div>
+            <div class="table-row hist-row"><span style="font-weight: 600;">Jul 15, 2026</span><span>[HORSE NAME]</span><span class="muted">[FARM], KY → Saratoga, NY</span><a href="#bol" style="font-weight: 600;">Bill of lading (PDF)</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ---------- invoices ---------- -->
+    <div data-panel="billing" hidden>
+      <div class="split" style="gap: 24px;">
+        <div class="stack" style="gap: 18px;">
+          <div class="table">
+            <div class="table-head inv-head"><span>Pay</span><span>Invoice</span><span>Date</span><span>Details</span><span>Amount</span><span>Status</span></div>
+            <div class="stack" id="invoice-rows"></div>
+          </div>
+
+          <div class="card card--green" style="flex-direction: row; justify-content: space-between; align-items: center; border-radius: 18px; flex-wrap: wrap;">
+            <div class="stack" style="gap: 4px;">
+              <span class="small" style="color: #D9D2C1;" id="sel-count">2 invoices selected</span>
+              <span style="font-family: var(--serif); font-size: 34px; font-weight: 600;" id="sel-total">$3,410.00</span>
+            </div>
+            <div class="row-center">
+              <span class="small" style="color: #D9D2C1;">Visa ····4242</span>
+              <a class="btn btn--gold" href="#pay">Pay selected</a>
+            </div>
+          </div>
+          <span class="small muted">Card payments carry a 3% processing fee. ACH and check are fee-free. Invoices come from NAV, our system of record for billing.</span>
+        </div>
+
+        <aside class="stack" style="gap: 16px;">
+          <div class="card">
+            <span style="font-size: 18px; font-weight: 700;">Payment methods</span>
+            <div class="card card--plain" style="padding: 16px; border-color: var(--line); flex-direction: row; justify-content: space-between; align-items: center; background: #fff;">
+              <span>Visa ····4242 · exp [00/00]</span>
+              <span class="small" style="font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--mint-ink);">Default</span>
+            </div>
+            <div class="card card--plain" style="padding: 16px; border-color: var(--line); background: #fff;">ACH · [BANK NAME] ····[0000]</div>
+            <a href="#add-method" style="font-weight: 700;">+ Add a card or bank account</a>
+          </div>
+          <div class="card">
+            <span style="font-size: 18px; font-weight: 700;">Autopay</span>
+            <label class="check" for="autopay"><input id="autopay" type="checkbox"> Charge my default method on the due date</label>
+          </div>
+          <div class="card">
+            <span style="font-size: 18px; font-weight: 700;">Statements</span>
+            <a href="#statements" style="font-weight: 600;">Monthly statements</a>
+            <a href="#w9" style="font-weight: 600;">Sallee W-9</a>
+            <a href="#terms" style="font-weight: 600;">Terms &amp; conditions of shipment</a>
+          </div>
+        </aside>
+      </div>
+    </div>
+
+    <!-- ---------- documents ---------- -->
+    <div data-panel="docs" hidden>
+      <div class="stack" style="gap: 24px;">
+        <div class="row-between">
+          <div class="stack" style="gap: 8px;">
+            <h2 style="font-size: 32px;">Papers on file</h2>
+            <span class="muted">Dispatch pulls from here when they build your load, so nothing gets chased at 5 a.m.</span>
+          </div>
+          <span class="tag tag--sale">1 document expires in 9 days</span>
+        </div>
+
+        <div class="grid grid-3">
+          <div class="card"><span class="tag tag--racing">Current</span><span style="font-size: 19px; font-weight: 700;">[HORSE NAME]</span><span class="muted">Coggins (EIA test)</span><span class="small muted">Expires Mar 4, 2027</span><a href="#doc" style="margin-top: auto; font-weight: 700;">View / replace →</a></div>
+          <div class="card"><span class="tag tag--sale">Expiring</span><span style="font-size: 19px; font-weight: 700;">[HORSE NAME]</span><span class="muted">Health certificate (CVI)</span><span class="small muted">Expires Sep 29, 2026</span><a href="#doc" style="margin-top: auto; font-weight: 700;">View / replace →</a></div>
+          <div class="card"><span class="tag tag--racing">Current</span><span style="font-size: 19px; font-weight: 700;">[HORSE NAME]</span><span class="muted">Coggins (EIA test)</span><span class="small muted">Expires Jan 18, 2027</span><a href="#doc" style="margin-top: auto; font-weight: 700;">View / replace →</a></div>
+          <div class="card"><span class="tag tag--racing">Current</span><span style="font-size: 19px; font-weight: 700;">[HORSE NAME]</span><span class="muted">Brand inspection</span><span class="small muted">On file since Jun 2026</span><a href="#doc" style="margin-top: auto; font-weight: 700;">View / replace →</a></div>
+          <div class="card"><span class="tag tag--alert">Missing</span><span style="font-size: 19px; font-weight: 700;">[HORSE NAME]</span><span class="muted">Import papers (U.S.–Canada)</span><span class="small muted">Needed for Woodbine move</span><a href="#doc" style="margin-top: auto; font-weight: 700;">Upload now →</a></div>
+          <div class="card"><span class="tag tag--racing">Current</span><span style="font-size: 19px; font-weight: 700;">Stable</span><span class="muted">Owner authorization on file</span><span class="small muted">Signed [DATE]</span><a href="#doc" style="margin-top: auto; font-weight: 700;">View / replace →</a></div>
+        </div>
+
+        <div class="card card--dashed" style="flex-direction: row; justify-content: space-between; align-items: center; gap: 24px; padding: 28px;">
+          <div class="stack" style="gap: 6px;">
+            <span style="font-size: 18px; font-weight: 700;">Upload a Coggins, health certificate or brand inspection</span>
+            <span class="muted">PDF or photo. We file it against the horse and flag dispatch automatically.</span>
+          </div>
+          <label class="btn btn--green" for="doc-upload">Choose file
+            <input id="doc-upload" type="file" style="position: absolute; width: 1px; height: 1px; opacity: 0;">
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <!-- ---------- notes ---------- -->
+    <div data-panel="notes" hidden>
+      <div class="split" style="gap: 24px;">
+        <div class="stack" style="gap: 20px;">
+          <div class="stack" style="gap: 8px;">
+            <h2 style="font-size: 32px;">Notes for the drivers</h2>
+            <span class="muted">Anything on a horse here prints on the load sheet and shows in the driver’s app.</span>
+          </div>
+
+          <div class="card" style="gap: 12px;">
+            <div class="row-between" style="align-items: center;">
+              <span style="font-size: 19px; font-weight: 700;">[HORSE NAME]</span>
+              <span class="small muted">Updated Sep 9</span>
+            </div>
+            <p class="card card--plain" style="padding: 16px; border: 0; line-height: 1.55;">[Your note — e.g. ships best with a companion, loads from the left, leave the window shut past the first stop.]</p>
+            <div class="row-center" style="gap: 12px;">
+              <a href="#edit-note" style="font-weight: 700;">Edit note</a>
+              <a href="#note-history" class="muted" style="font-weight: 600;">History</a>
+            </div>
+          </div>
+
+          <div class="card" style="gap: 12px;">
+            <div class="row-between" style="align-items: center;">
+              <span style="font-size: 19px; font-weight: 700;">[HORSE NAME]</span>
+              <span class="small muted">Updated Aug 28</span>
+            </div>
+            <p class="card card--plain" style="padding: 16px; border: 0; line-height: 1.55;">[Your note — e.g. scopes clean but gets warm; water at every stop, no hay net in transit.]</p>
+            <div class="row-center" style="gap: 12px;">
+              <a href="#edit-note" style="font-weight: 700;">Edit note</a>
+              <a href="#note-history" class="muted" style="font-weight: 600;">History</a>
+            </div>
+          </div>
+
+          <form class="card" data-demo style="gap: 12px;">
+            <label class="field" for="new-note"><span>Add a note</span>
+              <textarea id="new-note" rows="3" placeholder="Ships better with a companion; loads from the left; no hay net in transit…"></textarea>
+            </label>
+            <button class="btn btn--green" style="align-self: flex-start;" type="submit">Save note</button>
+            <span class="small" data-demo-note hidden style="color: var(--brass);">Concept only — nothing was saved.</span>
+          </form>
+        </div>
+
+        <aside class="stack" style="gap: 16px;">
+          <div class="card">
+            <span style="font-size: 18px; font-weight: 700;">Tell me when</span>
+            <label class="check" for="n1"><input id="n1" type="checkbox" checked> Text me when the van loads</label>
+            <label class="check" for="n2"><input id="n2" type="checkbox" checked> Text me an hour out from arrival</label>
+            <label class="check" for="n3"><input id="n3" type="checkbox"> Email me each invoice</label>
+            <label class="check" for="n4"><input id="n4" type="checkbox"> Alert me when space opens on a route I watch</label>
+          </div>
+          <div class="card">
+            <span style="font-size: 18px; font-weight: 700;">Barn contacts</span>
+            <span class="muted">[CONTACT NAME] · Barn manager<br>[PHONE] · [EMAIL]</span>
+            <span class="muted">[CONTACT NAME] · After hours<br>[PHONE]</span>
+            <a href="#contacts" style="font-weight: 700;">+ Add a contact</a>
+          </div>
+          <div class="card card--dark">
+            <span style="font-size: 18px; font-weight: 700;">Watching for space</span>
+            <span class="small" style="color: #D9D2C1;">Lexington KY → Ocala FL, any week in October.</span>
+            <a href="availability.html" style="color: var(--gold); font-weight: 700;">See open space on the van →</a>
+          </div>
+        </aside>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-bottom">
+      <span>© <span data-year>2026</span> Sallee Horse Vans</span>
+      <div class="footer-links"><a href="index.html">← Back to home</a></div>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/site.js"></script>
+<script>
+(function () {
+  'use strict';
+
+  var invoices = [
+    { id: 'INV-4471', date: 'Sep 12, 2026', desc: '2 horses · Keeneland → [FARM], KY', amount: 1840, status: 'Due Oct 12', open: true, checked: true },
+    { id: 'INV-4468', date: 'Sep 04, 2026', desc: '1 horse · [FARM], KY → Saratoga, NY', amount: 1570, status: 'Due Oct 4', open: true, checked: true },
+    { id: 'INV-4455', date: 'Aug 21, 2026', desc: '3 horses · Ocala, FL → [FARM], KY', amount: 2980, status: 'Paid Sep 8', open: false, checked: false },
+    { id: 'INV-4432', date: 'Aug 02, 2026', desc: '1 horse · Timonium, MD → Elmont, NY', amount: 940, status: 'Paid Aug 19', open: false, checked: false }
+  ];
+
+  function money(n) { return '$' + n.toLocaleString('en-US') + '.00'; }
+
+  var rows = document.getElementById('invoice-rows');
+
+  function totals() {
+    var count = 0, total = 0;
+    invoices.forEach(function (inv) { if (inv.checked) { count++; total += inv.amount; } });
+    document.getElementById('sel-count').textContent = count === 1 ? '1 invoice selected' : count + ' invoices selected';
+    document.getElementById('sel-total').textContent = money(total);
+  }
+
+  invoices.forEach(function (inv) {
+    var row = document.createElement('div');
+    row.className = 'table-row inv-row' + (inv.checked ? ' is-selected' : '');
+    row.innerHTML =
+      '<label style="display:flex;align-items:center;"><input type="checkbox" style="width:20px;height:20px;accent-color:var(--green);" aria-label="Select invoice ' + inv.id + ' for payment"></label>' +
+      '<span style="font-weight:700;">' + inv.id + '</span>' +
+      '<span class="muted">' + inv.date + '</span>' +
+      '<span class="muted">' + inv.desc + '</span>' +
+      '<span style="font-weight:700;">' + money(inv.amount) + '</span>' +
+      '<span class="small" style="font-weight:700;color:' + (inv.open ? 'var(--brass)' : 'var(--mint-ink)') + ';">' + inv.status + '</span>';
+    var box = row.querySelector('input');
+    box.checked = inv.checked;
+    box.addEventListener('change', function () {
+      inv.checked = box.checked;
+      row.classList.toggle('is-selected', box.checked);
+      totals();
+    });
+    rows.appendChild(row);
+  });
+
+  totals();
+
+  /* Buttons elsewhere on the page that jump to a tab */
+  document.querySelectorAll('[data-goto]').forEach(function (button) {
+    button.addEventListener('click', function () {
+      var target = document.querySelector('[data-tab="' + button.getAttribute('data-goto') + '"]');
+      if (target) { target.click(); target.scrollIntoView({ behavior: 'smooth', block: 'center' }); }
+    });
+  });
+}());
+</script>
+</body>
+</html>

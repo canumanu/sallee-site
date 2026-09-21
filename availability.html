@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Open space on the van — Sallee Horse Vans</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+
+<div class="proto">Concept build for review — <strong>not the live site</strong>. Loads shown are samples of what the dispatch load board would feed.</div>
+
+<div class="topbar">
+  <div class="wrap">
+    <span>Space updates from dispatch every 15 minutes · Last refresh 11:42 a.m. ET</span>
+    <div class="topbar-group">
+      <a href="tel:+18009678267">(800) 967-8267</a>
+      <a href="login.html"><strong>Client login</strong></a>
+    </div>
+  </div>
+</div>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html">
+      <span class="brand-mark">SALLEE</span>
+      <span class="brand-sub">Open space</span>
+    </a>
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a class="is-current" href="availability.html">Open space</a>
+      <a href="calendar.html">Events calendar</a>
+      <a href="planner.html">Plan a shipment</a>
+      <a href="account.html">My account</a>
+      <a class="btn btn--gold btn--sm" href="planner.html">Request shipping</a>
+    </nav>
+  </div>
+</header>
+
+<section style="padding-bottom: 24px;">
+  <div class="wrap row-between">
+    <div class="stack" style="gap: 12px; max-width: 720px;">
+      <span class="eyebrow">Loads already rolling</span>
+      <h1 style="font-size: clamp(36px, 4.6vw, 56px);">Open space on the van</h1>
+      <p class="lead">These trips are already planned and dispatched. If there’s a stall left, you can claim it — same van, same driver, shared cost.</p>
+    </div>
+    <div class="card card--dark" style="min-width: 260px; gap: 6px;">
+      <span class="small" style="letter-spacing: .08em; text-transform: uppercase; color: var(--gold); font-weight: 600;">Open right now</span>
+      <span style="font-family: var(--serif); font-size: 38px; font-weight: 600;" id="open-summary">14 stalls</span>
+      <span class="small" style="color: #D9D2C1;">across 6 planned loads this week</span>
+    </div>
+  </div>
+</section>
+
+<section style="padding: 0 0 20px;">
+  <div class="wrap row-between" style="align-items: center;">
+    <div class="chip-row" data-choice="dir" role="group" aria-label="Filter loads by direction">
+      <button class="chip" type="button" data-value="all" aria-pressed="true">All routes</button>
+      <button class="chip" type="button" data-value="north" aria-pressed="false">Northbound</button>
+      <button class="chip" type="button" data-value="south" aria-pressed="false">Southbound</button>
+      <button class="chip" type="button" data-value="canada" aria-pressed="false">U.S. – Canada</button>
+    </div>
+    <label class="check" for="space-only">
+      <input id="space-only" type="checkbox" checked>
+      Only show loads with space left
+    </label>
+  </div>
+</section>
+
+<section style="padding-top: 0;">
+  <div class="wrap split" style="gap: 24px;">
+
+    <div class="stack" style="gap: 14px;">
+      <div class="stack" style="gap: 14px;" id="load-list"></div>
+      <div class="card card--dashed" style="flex-direction: row; align-items: center; gap: 12px;">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8A5E17" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v4l3 2"/></svg>
+        <span class="small muted">Space shown is what dispatch has open on the load board. Claiming a stall sends a request — dispatch confirms by phone or email before it’s booked.</span>
+      </div>
+    </div>
+
+    <aside class="stack" style="gap: 16px;">
+      <div class="card">
+        <span style="font-size: 18px; font-weight: 700;">Don’t see your route?</span>
+        <span class="muted">We run 200+ routes and add loads daily. Tell us where the horse needs to go and dispatch will build around it.</span>
+        <a class="btn btn--green" style="align-self: flex-start;" href="planner.html">Plan a shipment</a>
+      </div>
+
+      <form class="card card--dark" data-demo>
+        <span style="font-size: 18px; font-weight: 700;">Watch a route</span>
+        <span class="small" style="color: #D9D2C1;">We’ll text you the moment a stall opens on the lane you’re watching.</span>
+        <label class="field dark-field"><span>Route</span><input type="text" placeholder="Lexington, KY → Ocala, FL"></label>
+        <label class="field dark-field"><span>Mobile number</span><input type="tel" placeholder="(000) 000-0000"></label>
+        <button class="btn btn--gold" type="submit">Alert me</button>
+        <span class="small" data-demo-note hidden style="color: var(--gold);">Concept only — no alert was set.</span>
+      </form>
+
+      <div class="card">
+        <span style="font-size: 18px; font-weight: 700;">How a stall is measured</span>
+        <span class="muted">A box is one standard stall. Bigger horses, mares with foals and stallions ship at 1.5 or 2 — dispatch confirms the space when they see the horse.</span>
+        <div class="row-center" style="gap: 16px;">
+          <span class="small muted" style="display: flex; align-items: center; gap: 8px;"><span class="stall"></span>Taken</span>
+          <span class="small muted" style="display: flex; align-items: center; gap: 8px;"><span class="stall stall--open"></span>Open</span>
+        </div>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-bottom">
+      <span>© <span data-year>2026</span> Sallee Horse Vans · Space fed from the dispatch load board</span>
+      <div class="footer-links"><a href="index.html">← Back to home</a></div>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/site.js"></script>
+<script>
+(function () {
+  'use strict';
+
+  var loads = [
+    { order: '10412', date: 'Mon Oct 5', depart: 'Departs 6:00 a.m.', route: 'Lexington, KY → Ocala, FL', stops: 'via Nashville · Macon · Gainesville', van: 'Van 42', capacity: 9, taken: 6, price: 'Shared rate from $[000] / horse', dir: 'south' },
+    { order: '10418', date: 'Tue Oct 6', depart: 'Departs 5:30 a.m.', route: 'Lexington, KY → Elmont, NY', stops: 'via Charleston WV · Harrisburg', van: 'Van 17', capacity: 8, taken: 8, price: 'Waitlist only', dir: 'north' },
+    { order: '10421', date: 'Wed Oct 7', depart: 'Departs 7:00 a.m.', route: 'Ocala, FL → Lexington, KY', stops: 'via Ocala training centers · Atlanta', van: 'Van 29', capacity: 9, taken: 4, price: 'Shared rate from $[000] / horse', dir: 'north' },
+    { order: '10426', date: 'Thu Oct 8', depart: 'Departs 4:45 a.m.', route: 'Elmont, NY → Woodbine, ON', stops: 'Border crossing at Lewiston · CFIA paperwork handled', van: 'Van 8', capacity: 6, taken: 5, price: 'Cross-border rate on request', dir: 'canada' },
+    { order: '10430', date: 'Fri Oct 9', depart: 'Departs 6:30 a.m.', route: 'Keeneland, KY → Tryon, NC', stops: 'Show run · via Knoxville · Asheville', van: 'Van 51', capacity: 8, taken: 2, price: 'Shared rate from $[000] / horse', dir: 'south' },
+    { order: '10436', date: 'Sat Oct 10', depart: 'Departs 5:00 a.m.', route: 'Lexington, KY → Saratoga Springs, NY', stops: 'via Columbus · Syracuse', van: 'Van 33', capacity: 9, taken: 7, price: 'Shared rate from $[000] / horse', dir: 'north' }
+  ];
+
+  var state = { dir: 'all', spaceOnly: true };
+  var list = document.getElementById('load-list');
+
+  var totalOpen = loads.reduce(function (sum, l) { return sum + Math.max(l.capacity - l.taken, 0); }, 0);
+  document.getElementById('open-summary').textContent = totalOpen + ' stalls';
+
+  function pips(load) {
+    var html = '';
+    for (var i = 0; i < load.capacity; i++) {
+      html += '<span class="stall' + (i < load.taken ? '' : ' stall--open') + '"></span>';
+    }
+    return html;
+  }
+
+  function render() {
+    var rows = loads.filter(function (l) {
+      if (state.dir !== 'all' && l.dir !== state.dir) { return false; }
+      if (state.spaceOnly && l.capacity - l.taken <= 0) { return false; }
+      return true;
+    });
+
+    list.innerHTML = '';
+
+    if (!rows.length) {
+      var empty = document.createElement('div');
+      empty.className = 'card card--dashed center muted';
+      empty.style.padding = '48px';
+      empty.textContent = 'No loads match those filters this week. Try all routes, or plan a shipment and we’ll build one.';
+      list.appendChild(empty);
+      return;
+    }
+
+    rows.forEach(function (l) {
+      var left = l.capacity - l.taken;
+      var full = left <= 0;
+      var tight = !full && left <= 2;
+      var card = document.createElement('div');
+      card.className = 'card';
+      card.style.borderRadius = '20px';
+      card.style.gap = '20px';
+      if (full) { card.style.opacity = '.75'; }
+
+      card.innerHTML =
+        '<div class="row-between" style="align-items: flex-start;">' +
+          '<div style="display:flex; gap:26px; align-items:flex-start; flex-wrap:wrap;">' +
+            '<div class="stack" style="gap:2px; min-width:130px;">' +
+              '<span style="font-family:var(--serif); font-size:26px; font-weight:600; color:var(--dark);">' + l.date + '</span>' +
+              '<span class="small muted">' + l.depart + '</span>' +
+            '</div>' +
+            '<div class="stack" style="gap:6px;">' +
+              '<span style="font-size:21px; font-weight:700;">' + l.route + '</span>' +
+              '<span class="small muted">' + l.stops + '</span>' +
+              '<span class="small muted">' + l.van + ' · Order group #' + l.order + '</span>' +
+            '</div>' +
+          '</div>' +
+          '<div class="stack" style="align-items:flex-end; gap:10px;">' +
+            '<span class="tag ' + (full ? 'tag--grey' : (tight ? 'tag--sale' : 'tag--racing')) + '">' +
+              (full ? 'Full' : (tight ? 'Almost full' : left + ' stalls open')) + '</span>' +
+            '<span class="small" style="color:var(--body);">' + l.price + '</span>' +
+          '</div>' +
+        '</div>' +
+        '<div class="row-between" style="align-items:center;">' +
+          '<div class="stack" style="gap:8px;">' +
+            '<div class="stalls">' + pips(l) + '</div>' +
+            '<span class="small muted">' +
+              (full
+                ? 'Full — ' + l.taken + ' of ' + l.capacity + ' stalls committed'
+                : left + ' of ' + l.capacity + ' stalls open · space held for 24 hours once requested') +
+            '</span>' +
+          '</div>' +
+          '<a class="btn ' + (full ? 'btn--outline' : 'btn--green') + '" href="planner.html">' +
+            (full ? 'Join the waitlist' : 'Claim a stall') + '</a>' +
+        '</div>';
+
+      list.appendChild(card);
+    });
+  }
+
+  document.querySelector('[data-choice="dir"]').addEventListener('choice', function (event) {
+    state.dir = event.detail.value;
+    render();
+  });
+  document.getElementById('space-only').addEventListener('change', function (event) {
+    state.spaceOnly = event.target.checked;
+    render();
+  });
+
+  render();
+}());
+</script>
+</body>
+</html>

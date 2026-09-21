@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Events calendar — Sallee Horse Vans</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+
+<div class="proto">Concept build for review — <strong>not the live site</strong>. Event dates are illustrative; confirm with each venue.</div>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html">
+      <span class="brand-mark">SALLEE</span>
+      <span class="brand-sub">Horse Vans</span>
+    </a>
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="availability.html">Open space</a>
+      <a class="is-current" href="calendar.html">Events calendar</a>
+      <a href="planner.html">Plan a shipment</a>
+      <a href="account.html">My account</a>
+      <a class="btn btn--gold btn--sm" href="tel:+18009678267">(800) 967-8267</a>
+    </nav>
+  </div>
+</header>
+
+<section style="padding-bottom: 24px;">
+  <div class="wrap stack" style="gap: 26px;">
+    <div class="row-between">
+      <div class="stack" style="gap: 10px;">
+        <span class="eyebrow">Fall 2026 – Winter 2027</span>
+        <h1 style="font-size: clamp(36px, 4.6vw, 60px);">The horse country calendar</h1>
+        <p class="lead" style="max-width: 700px;">Major sales, race meets and horse shows our vans serve. Pick an event to see who handles it and request space on the van.</p>
+      </div>
+      <span class="muted" style="font-weight: 600;" id="count-label">16 events shown</span>
+    </div>
+
+    <div class="card" style="flex-direction: row; justify-content: space-between; align-items: center; gap: 20px; flex-wrap: wrap; padding: 16px;">
+      <div class="chip-row" data-choice="cat" role="group" aria-label="Filter by event type">
+        <button class="chip" type="button" data-value="all" aria-pressed="true"><span class="chip-dot" style="background:#D6B679"></span>All events</button>
+        <button class="chip" type="button" data-value="sale" aria-pressed="false"><span class="chip-dot" style="background:#B8862F"></span>Horse sales</button>
+        <button class="chip" type="button" data-value="racing" aria-pressed="false"><span class="chip-dot" style="background:#2E7D55"></span>Race meets</button>
+        <button class="chip" type="button" data-value="show" aria-pressed="false"><span class="chip-dot" style="background:#9A5A85"></span>Horse shows</button>
+      </div>
+      <div class="chip-row" data-choice="month" role="group" aria-label="Filter by month">
+        <button class="chip chip--square" type="button" data-value="all" aria-pressed="true">All</button>
+        <button class="chip chip--square" type="button" data-value="sep" aria-pressed="false">Sep</button>
+        <button class="chip chip--square" type="button" data-value="oct" aria-pressed="false">Oct</button>
+        <button class="chip chip--square" type="button" data-value="nov" aria-pressed="false">Nov</button>
+        <button class="chip chip--square" type="button" data-value="jan" aria-pressed="false">Jan</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top: 0;">
+  <div class="wrap split" style="gap: 32px;">
+    <div class="stack" style="gap: 10px;">
+      <div class="stack" style="gap: 10px;" id="event-list"></div>
+      <p class="small muted" style="margin-top: 8px;">Dates as published by each sale company, track and show. Always confirm with the venue before you ship.</p>
+    </div>
+
+    <aside class="card card--green" style="border-radius: 22px; padding: 0; overflow: hidden; gap: 0;" aria-label="Selected event">
+      <div class="stack" style="padding: 30px 30px 22px; gap: 14px;">
+        <span class="tag tag--gold" id="sel-cat">Racing</span>
+        <h2 style="font-size: 32px; color: var(--cream);" id="sel-name">Breeders’ Cup World Championships</h2>
+        <span style="font-size: 20px; font-weight: 600; color: var(--gold);" id="sel-date">Oct 30 – 31, 2026</span>
+        <span style="color: #D9D2C1;" id="sel-venue">Keeneland Race Course · Lexington, KY</span>
+      </div>
+      <div style="margin: 0 30px; padding: 20px; border-radius: 14px; background: var(--dark); display: flex; flex-direction: column; gap: 8px;">
+        <span class="small" style="letter-spacing: .18em; text-transform: uppercase; color: var(--sage); font-weight: 700;">Handled by</span>
+        <span style="font-size: 18px; font-weight: 700;" id="sel-office">Sallee Lexington office</span>
+        <a style="color: var(--gold); font-weight: 600;" id="sel-phone" href="tel:+18592559406">(859) 255-9406</a>
+        <span class="small" style="color: #D9D2C1;">Ask dispatch about scheduled runs in and out of this event.</span>
+      </div>
+      <div class="stack" style="padding: 22px 30px 30px; gap: 12px;">
+        <a class="btn btn--gold btn--block" href="planner.html">Request shipping to this event</a>
+        <button class="btn btn--ghost btn--block" type="button">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18"/><path d="M12 13v5"/><path d="M9.5 15.5h5"/></svg>
+          Add to my calendar
+        </button>
+        <button class="btn btn--ghost btn--block" type="button">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="18" cy="5" r="2.5"/><circle cx="6" cy="12" r="2.5"/><circle cx="18" cy="19" r="2.5"/><path d="M8.2 10.8l7.6-4.4"/><path d="M8.2 13.2l7.6 4.4"/></svg>
+          Share with my trainer
+        </button>
+        <button class="btn btn--ghost btn--block" type="button">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg>
+          Alert me when the van schedule posts
+        </button>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-bottom">
+      <span>© <span data-year>2026</span> Sallee Horse Vans</span>
+      <div class="footer-links"><a href="index.html">← Back to home</a></div>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/site.js"></script>
+<script>
+(function () {
+  'use strict';
+
+  var offices = {
+    Lexington: { phone: '(859) 255-9406', tel: '+18592559406' },
+    Ocala: { phone: '(352) 622-2514', tel: '+13526222514' },
+    Elmont: { phone: '(516) 697-4513', tel: '+15166974513' }
+  };
+  var cats = {
+    sale: { label: 'Sale', cls: 'tag--sale' },
+    racing: { label: 'Racing', cls: 'tag--racing' },
+    show: { label: 'Show', cls: 'tag--show' }
+  };
+  var events = [
+    { id: 'kee-sep', cat: 'sale', month: 'sep', mon: 'SEP', days: '14–26', dateLong: 'Sep 14 – 26, 2026', name: 'Keeneland September Yearling Sale', venue: 'Keeneland', city: 'Lexington, KY', office: 'Lexington' },
+    { id: 'ft-cal', cat: 'sale', month: 'sep', mon: 'SEP', days: '30', dateLong: 'Sep 30, 2026', name: 'Fasig-Tipton California Fall Yearlings', venue: 'Fasig-Tipton', city: 'Pomona, CA', office: 'Lexington' },
+    { id: 'kee-fall', cat: 'racing', month: 'oct', mon: 'OCT', days: '2–24', dateLong: 'Oct 2 – 24, 2026', name: 'Keeneland Fall Meet', venue: 'Keeneland Race Course', city: 'Lexington, KY', office: 'Lexington' },
+    { id: 'obs-oct', cat: 'sale', month: 'oct', mon: 'OCT', days: '6–7', dateLong: 'Oct 6 – 7, 2026', name: 'OBS October Yearling Sale', venue: 'Ocala Breeders’ Sales', city: 'Ocala, FL', office: 'Ocala' },
+    { id: 'ft-sfm', cat: 'sale', month: 'oct', mon: 'OCT', days: '12', dateLong: 'Oct 12, 2026', name: 'Fasig-Tipton Saratoga Fall Mixed', venue: 'Fasig-Tipton', city: 'Saratoga Springs, NY', office: 'Elmont' },
+    { id: 'ft-koy', cat: 'sale', month: 'oct', mon: 'OCT', days: '19–22', dateLong: 'Oct 19 – 22, 2026', name: 'Fasig-Tipton Kentucky October Yearlings', venue: 'Fasig-Tipton', city: 'Lexington, KY', office: 'Lexington' },
+    { id: 'wihs', cat: 'show', month: 'oct', mon: 'OCT', days: '19–25', dateLong: 'Oct 19 – 25, 2026', name: 'Washington International Horse Show', venue: 'Prince George’s Equestrian Center', city: 'Upper Marlboro, MD', office: 'Elmont' },
+    { id: 'nhs', cat: 'show', month: 'oct', mon: 'OCT', days: '21', dateLong: 'Oct 21 – Nov 1, 2026', name: 'National Horse Show', venue: 'Tryon International', city: 'Mill Spring, NC', office: 'Lexington' },
+    { id: 'ft-efy', cat: 'sale', month: 'oct', mon: 'OCT', days: '27', dateLong: 'Oct 27, 2026', name: 'Fasig-Tipton Eastern Fall Yearlings', venue: 'Fasig-Tipton', city: 'Timonium, MD', office: 'Elmont' },
+    { id: 'bc', cat: 'racing', month: 'oct', mon: 'OCT', days: '30–31', dateLong: 'Oct 30 – 31, 2026', name: 'Breeders’ Cup World Championships', venue: 'Keeneland Race Course', city: 'Lexington, KY', office: 'Lexington' },
+    { id: 'ft-nov', cat: 'sale', month: 'nov', mon: 'NOV', days: '2', dateLong: 'Nov 2, 2026', name: 'Fasig-Tipton The November Sale', venue: 'Fasig-Tipton', city: 'Lexington, KY', office: 'Lexington' },
+    { id: 'kee-nov', cat: 'sale', month: 'nov', mon: 'NOV', days: '3–11', dateLong: 'Nov 3 – 11, 2026', name: 'Keeneland November Breeding Stock Sale', venue: 'Keeneland', city: 'Lexington, KY', office: 'Lexington' },
+    { id: 'kee-hra', cat: 'sale', month: 'nov', mon: 'NOV', days: '12', dateLong: 'Nov 12, 2026', name: 'Keeneland November Horses of Racing Age', venue: 'Keeneland', city: 'Lexington, KY', office: 'Lexington' },
+    { id: 'fg', cat: 'racing', month: 'nov', mon: 'NOV', days: '19', dateLong: 'Nov 19, 2026 – Mar 21, 2027', name: 'Fair Grounds Meet (opening day)', venue: 'Fair Grounds Race Course', city: 'New Orleans, LA', office: 'Lexington' },
+    { id: 'wef', cat: 'show', month: 'jan', mon: 'JAN', days: '6', dateLong: 'Jan 6 – Apr 4, 2027', name: 'Winter Equestrian Festival (opens)', venue: 'Wellington International', city: 'Wellington, FL', office: 'Ocala' },
+    { id: 'kee-jan', cat: 'sale', month: 'jan', mon: 'JAN', days: '11–14', dateLong: 'Jan 11 – 14, 2027', name: 'Keeneland January Horses of All Ages', venue: 'Keeneland', city: 'Lexington, KY', office: 'Lexington' }
+  ];
+
+  var state = { cat: 'all', month: 'all', sel: 'bc' };
+  var list = document.getElementById('event-list');
+
+  function detail(event) {
+    var office = offices[event.office];
+    document.getElementById('sel-cat').textContent = cats[event.cat].label;
+    document.getElementById('sel-name').textContent = event.name;
+    document.getElementById('sel-date').textContent = event.dateLong;
+    document.getElementById('sel-venue').textContent = event.venue + ' · ' + event.city;
+    document.getElementById('sel-office').textContent = 'Sallee ' + event.office + ' office';
+    var phone = document.getElementById('sel-phone');
+    phone.textContent = office.phone;
+    phone.href = 'tel:' + office.tel;
+  }
+
+  function render() {
+    var rows = events.filter(function (e) {
+      return (state.cat === 'all' || e.cat === state.cat) && (state.month === 'all' || e.month === state.month);
+    });
+    document.getElementById('count-label').textContent = rows.length + (rows.length === 1 ? ' event' : ' events') + ' shown';
+    list.innerHTML = '';
+
+    if (!rows.length) {
+      var empty = document.createElement('div');
+      empty.className = 'card card--dashed center muted';
+      empty.style.padding = '48px';
+      empty.textContent = 'No events of this type that month. Try another month or “All events”.';
+      list.appendChild(empty);
+      return;
+    }
+
+    rows.forEach(function (e) {
+      var row = document.createElement('button');
+      row.type = 'button';
+      row.className = 'event-row';
+      row.setAttribute('aria-pressed', String(e.id === state.sel));
+      row.innerHTML =
+        '<span class="event-date"><span class="event-mon"></span><span class="event-days"></span></span>' +
+        '<span class="event-main"><span class="event-name"></span><span class="small muted"></span></span>' +
+        '<span class="tag ' + cats[e.cat].cls + '"></span>' +
+        '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8A5E17" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>';
+      row.querySelector('.event-mon').textContent = e.mon;
+      row.querySelector('.event-days').textContent = e.days;
+      row.querySelector('.event-name').textContent = e.name;
+      row.querySelector('.event-main .small').textContent = e.venue + ' · ' + e.city;
+      row.querySelector('.tag').textContent = cats[e.cat].label;
+      row.addEventListener('click', function () {
+        state.sel = e.id;
+        detail(e);
+        render();
+      });
+      list.appendChild(row);
+    });
+  }
+
+  document.querySelector('[data-choice="cat"]').addEventListener('choice', function (event) {
+    state.cat = event.detail.value;
+    render();
+  });
+  document.querySelector('[data-choice="month"]').addEventListener('choice', function (event) {
+    state.month = event.detail.value;
+    render();
+  });
+
+  render();
+}());
+</script>
+</body>
+</html>

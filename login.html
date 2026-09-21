@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Client sign in — Sallee Horse Vans</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+
+<div class="proto">Concept build for review — <strong>not the live site</strong>. Signing in just opens the sample account page.</div>
+
+<main class="split--even" style="min-height: 100vh; gap: 0; align-items: stretch;">
+
+  <div class="band-dark" style="padding: 48px 0; display: flex;">
+    <div class="wrap stack" style="max-width: 640px; justify-content: space-between; gap: 40px;">
+      <a class="brand" href="index.html">
+        <span class="brand-mark">SALLEE</span>
+        <span class="brand-sub">Horse Vans</span>
+      </a>
+
+      <div class="stack" style="gap: 26px;">
+        <div class="media" style="min-height: 260px;">
+          <span class="tag tag--dashed" data-play-note>[VIDEO — loading out at dawn]</span>
+          <button class="play" type="button" data-play aria-label="Play the loading-out clip">
+            <svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg>
+          </button>
+          <span class="small" style="color: #D9D2C1;">Van [00] rolling out of [FARM] for [TRACK] · 4:40 a.m.</span>
+        </div>
+
+        <p style="font-family: var(--serif); font-size: clamp(24px, 2.6vw, 34px); line-height: 1.25; color: var(--cream);">Your horses, your paperwork, your invoices — in one place, seven days a week.</p>
+
+        <div class="stack" style="gap: 14px;">
+          <span class="row-center" style="gap: 12px; color: #D9D2C1;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#D6B679" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
+            Watch the van live and get a text an hour out
+          </span>
+          <span class="row-center" style="gap: 12px; color: #D9D2C1;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#D6B679" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
+            Pay invoices by card or ACH, or set up autopay
+          </span>
+          <span class="row-center" style="gap: 12px; color: #D9D2C1;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#D6B679" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
+            Keep Coggins and health papers on file for every horse
+          </span>
+        </div>
+      </div>
+
+      <span class="small" style="color: var(--sage);">Questions about your account? Lexington dispatch, (800) 967-8267.</span>
+    </div>
+  </div>
+
+  <div style="display: flex; align-items: center; padding: 56px 0;">
+    <div class="wrap stack" style="max-width: 560px; gap: 26px;">
+      <div class="stack" style="gap: 10px;">
+        <span class="eyebrow">Client login</span>
+        <h1 style="font-size: clamp(34px, 4vw, 46px);">Welcome back.</h1>
+      </div>
+
+      <form class="stack" style="gap: 20px;" action="account.html">
+        <label class="field" for="login-email"><span>Email or account number</span>
+          <input id="login-email" type="email" autocomplete="username" placeholder="barn@yourfarm.com">
+        </label>
+        <label class="field" for="login-password"><span>Password</span>
+          <input id="login-password" type="password" autocomplete="current-password" placeholder="••••••••">
+        </label>
+        <div class="row-between" style="align-items: center;">
+          <label class="check" for="login-remember">
+            <input id="login-remember" type="checkbox"> Keep me signed in on this device
+          </label>
+          <a href="#reset" style="font-weight: 600;">Forgot password?</a>
+        </div>
+        <button class="btn btn--green btn--lg btn--block" type="submit">Sign in</button>
+      </form>
+
+      <div class="row-center" style="gap: 16px;">
+        <span style="flex-grow: 1; height: 1px; background: var(--line);"></span>
+        <span class="small muted" style="letter-spacing: .1em; text-transform: uppercase;">or</span>
+        <span style="flex-grow: 1; height: 1px; background: var(--line);"></span>
+      </div>
+
+      <div class="card">
+        <span style="font-size: 18px; font-weight: 700;">New to Sallee, or never set up a login?</span>
+        <span class="muted">Send us your farm or stable name and we’ll open an account and email your credentials, usually the same business day.</span>
+        <a class="btn btn--outline" style="align-self: flex-start;" href="planner.html">Request an account</a>
+      </div>
+
+      <a href="index.html" style="font-weight: 600;">← Back to salleehorsevans.com</a>
+    </div>
+  </div>
+</main>
+
+<script src="assets/site.js"></script>
+</body>
+</html>

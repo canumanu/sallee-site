@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Plan a shipment — Sallee Horse Vans</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+
+<div class="proto">Concept build for review — <strong>not the live site</strong>. Nothing you send here reaches dispatch.</div>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html">
+      <span class="brand-mark">SALLEE</span>
+      <span class="brand-sub">Horse Vans</span>
+    </a>
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="availability.html">Open space</a>
+      <a href="calendar.html">Events calendar</a>
+      <a class="is-current" href="planner.html">Plan a shipment</a>
+      <a href="account.html">My account</a>
+      <a class="btn btn--gold btn--sm" href="tel:+18009678267">(800) 967-8267</a>
+    </nav>
+  </div>
+</header>
+
+<section style="padding-bottom: 20px;">
+  <div class="wrap stack" style="gap: 10px;">
+    <span class="eyebrow">Shipment planner</span>
+    <h1 style="font-size: clamp(36px, 4.6vw, 60px);">Tell us where they’re headed.</h1>
+    <p class="lead" style="max-width: 720px;">Two minutes to request a move. Dispatch confirms space, price and timing by phone — and you’ll know exactly which papers to have ready.</p>
+  </div>
+</section>
+
+<section style="padding-top: 0;">
+  <div class="wrap split" style="gap: 32px;">
+
+    <div class="card" style="border-radius: 22px; padding: 32px; gap: 28px;" id="planner-form">
+      <div class="grid grid-2">
+        <label class="field"><span>Picking up from</span><input type="text" placeholder="Farm, track or city"></label>
+        <label class="field"><span>Earliest ship date</span><input type="date"></label>
+      </div>
+
+      <fieldset style="margin: 0; padding: 0; border: 0;" class="stack">
+        <legend style="padding: 0; margin-bottom: 12px; font-size: 14px; font-weight: 700;">Going to</legend>
+        <div class="chip-row" data-choice="dest" id="dest-chips"></div>
+        <label class="field" id="other-dest" hidden style="margin-top: 14px;">
+          <span>Destination address</span>
+          <input type="text" placeholder="Farm, track, sale or show grounds">
+        </label>
+      </fieldset>
+
+      <div class="grid grid-2">
+        <div class="stack" style="gap: 12px;">
+          <span style="font-size: 14px; font-weight: 700;" id="horses-label">Number of horses</span>
+          <div role="group" aria-labelledby="horses-label" style="display: flex; align-self: flex-start; border: 1px solid var(--line-strong); border-radius: 12px; background: #fff; overflow: hidden;">
+            <button type="button" id="horse-minus" aria-label="One fewer horse" style="width: 54px; height: 54px; border: 0; background: var(--cream); font-size: 22px; font-weight: 700; color: var(--green); cursor: pointer;">−</button>
+            <span id="horse-count" style="width: 64px; display: flex; align-items: center; justify-content: center; font-family: var(--serif); font-size: 24px; font-weight: 600;">1</span>
+            <button type="button" id="horse-plus" aria-label="One more horse" style="width: 54px; height: 54px; border: 0; background: var(--cream); font-size: 22px; font-weight: 700; color: var(--green); cursor: pointer;">+</button>
+          </div>
+        </div>
+        <div class="stack" style="gap: 12px;">
+          <span style="font-size: 14px; font-weight: 700;">Type of horse</span>
+          <div class="chip-row" data-choice="kind" role="group" aria-label="Type of horse">
+            <button class="chip" type="button" data-value="Thoroughbred" aria-pressed="true">Thoroughbred</button>
+            <button class="chip" type="button" data-value="sport horse" aria-pressed="false">Sport horse</button>
+            <button class="chip" type="button" data-value="broodmare" aria-pressed="false">Broodmare</button>
+            <button class="chip" type="button" data-value="horse" aria-pressed="false">Other horse</button>
+          </div>
+        </div>
+      </div>
+
+      <button type="button" id="border-toggle" aria-pressed="false"
+        style="padding: 18px 20px; border-radius: 14px; border: 1px solid var(--line); background: #fff; cursor: pointer; display: flex; align-items: center; justify-content: space-between; gap: 16px; text-align: left;">
+        <span class="stack" style="gap: 4px;">
+          <span style="font-size: 16px; font-weight: 700;">Crossing the U.S.–Canada border</span>
+          <span class="small muted">Adds export and import paperwork to your checklist.</span>
+        </span>
+        <span id="border-track" style="width: 52px; height: 30px; flex-shrink: 0; border-radius: 999px; padding: 3px; display: flex; justify-content: flex-start; background: var(--line-strong);">
+          <span style="width: 24px; height: 24px; border-radius: 999px; background: #fff;"></span>
+        </span>
+      </button>
+
+      <label class="field"><span>Anything dispatch should know?</span>
+        <textarea rows="3" placeholder="Temperament, special handling, a groom traveling along…"></textarea>
+      </label>
+
+      <div class="grid grid-3" style="align-items: end;">
+        <label class="field"><span>Your name</span><input type="text" autocomplete="name"></label>
+        <label class="field"><span>Mobile phone</span><input type="tel" autocomplete="tel"></label>
+        <button class="btn btn--green" type="button" id="send-request" style="height: 56px;">Send request to dispatch</button>
+      </div>
+    </div>
+
+    <div class="card" id="planner-done" hidden style="border-radius: 22px; padding: 48px; gap: 18px; align-items: flex-start;">
+      <span style="width: 64px; height: 64px; border-radius: 999px; background: var(--mint); display: flex; align-items: center; justify-content: center;">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#1E5B3F" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>
+      </span>
+      <h2>Request received.</h2>
+      <p class="lead" style="max-width: 620px;" id="done-text">Our Lexington office will call you to confirm space, price and pickup time.</p>
+      <button class="btn btn--outline" type="button" id="plan-again">Plan another shipment</button>
+    </div>
+
+    <aside class="stack" style="gap: 20px;" aria-label="Your shipment">
+      <div class="card card--green" style="border-radius: 22px; gap: 16px;">
+        <span class="small" style="letter-spacing: .2em; text-transform: uppercase; color: var(--gold); font-weight: 700;">Your shipment</span>
+        <div class="stack" style="gap: 4px;">
+          <span class="small" style="color: var(--sage);">Destination</span>
+          <span style="font-family: var(--serif); font-size: 26px; font-weight: 600;" id="sum-dest">Breeders’ Cup, Keeneland</span>
+          <span class="small" style="color: #D9D2C1;" id="sum-when">Oct 30 – 31, 2026 · Lexington, KY</span>
+        </div>
+        <div class="grid grid-2" style="padding-top: 16px; border-top: 1px solid #2F5243; gap: 12px;">
+          <div class="stack" style="gap: 4px;">
+            <span class="small" style="color: var(--sage);">Horses</span>
+            <span style="font-size: 18px; font-weight: 700;" id="sum-horses">1 Thoroughbred</span>
+          </div>
+          <div class="stack" style="gap: 4px;">
+            <span class="small" style="color: var(--sage);">Handled by</span>
+            <span style="font-size: 18px; font-weight: 700;" id="sum-office">Lexington office</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" style="border-radius: 22px; gap: 16px;">
+        <div class="row-between" style="align-items: baseline;">
+          <span style="font-size: 20px; font-weight: 700;">Paperwork checklist</span>
+          <span class="small muted" id="doc-count">3 items</span>
+        </div>
+        <div class="stack" style="gap: 16px;" id="doc-list"></div>
+        <p class="small muted" style="padding-top: 14px; border-top: 1px solid var(--line);">Requirements vary by state, venue and country. Your dispatcher confirms the final list before loading.</p>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-bottom">
+      <span>© <span data-year>2026</span> Sallee Horse Vans</span>
+      <div class="footer-links"><a href="index.html">← Back to home</a></div>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/site.js"></script>
+<script>
+(function () {
+  'use strict';
+
+  var dests = [
+    { key: 'bc', label: 'Breeders’ Cup', sub: 'Keeneland · Oct 30–31', name: 'Breeders’ Cup, Keeneland', when: 'Oct 30 – 31, 2026 · Lexington, KY', office: 'Lexington' },
+    { key: 'ftnov', label: 'F-T November Sale', sub: 'Lexington · Nov 2', name: 'Fasig-Tipton November Sale', when: 'Nov 2, 2026 · Lexington, KY', office: 'Lexington' },
+    { key: 'keenov', label: 'Keeneland November', sub: 'Lexington · Nov 3–11', name: 'Keeneland November Breeding Stock Sale', when: 'Nov 3 – 11, 2026 · Lexington, KY', office: 'Lexington' },
+    { key: 'fg', label: 'Fair Grounds', sub: 'New Orleans · opens Nov 19', name: 'Fair Grounds Race Course', when: 'Meet opens Nov 19, 2026 · New Orleans, LA', office: 'Lexington' },
+    { key: 'wef', label: 'WEF Wellington', sub: 'Opens Jan 6', name: 'Winter Equestrian Festival', when: 'Jan 6 – Apr 4, 2027 · Wellington, FL', office: 'Ocala' },
+    { key: 'other', label: 'Somewhere else', sub: 'Farm, track or show', name: 'Your destination', when: 'Address to confirm with dispatch', office: 'Lexington' }
+  ];
+  var phones = { Lexington: '(859) 255-9406', Ocala: '(352) 622-2514', Elmont: '(516) 697-4513' };
+
+  var state = { dest: 'bc', horses: 1, kind: 'Thoroughbred', border: false };
+
+  var chipWrap = document.getElementById('dest-chips');
+  dests.forEach(function (d) {
+    var button = document.createElement('button');
+    button.type = 'button';
+    button.className = 'chip';
+    button.style.flexDirection = 'column';
+    button.style.alignItems = 'flex-start';
+    button.style.gap = '2px';
+    button.style.padding = '10px 18px';
+    button.style.borderRadius = '12px';
+    button.setAttribute('data-value', d.key);
+    button.setAttribute('aria-pressed', String(d.key === state.dest));
+    button.innerHTML = '<span style="font-size:15px;font-weight:700;"></span><span style="font-size:12px;opacity:.8;"></span>';
+    button.children[0].textContent = d.label;
+    button.children[1].textContent = d.sub;
+    chipWrap.appendChild(button);
+  });
+
+  function currentDest() {
+    return dests.filter(function (d) { return d.key === state.dest; })[0] || dests[0];
+  }
+
+  function horsesLabel() {
+    var word = state.kind.toLowerCase();
+    return state.horses + ' ' + word + (state.horses === 1 ? '' : 's');
+  }
+
+  function render() {
+    var d = currentDest();
+    document.getElementById('sum-dest').textContent = d.name;
+    document.getElementById('sum-when').textContent = d.when;
+    document.getElementById('sum-office').textContent = d.office + ' office';
+    document.getElementById('sum-horses').textContent = horsesLabel();
+    document.getElementById('horse-count').textContent = state.horses;
+    document.getElementById('other-dest').hidden = state.dest !== 'other';
+
+    var track = document.getElementById('border-track');
+    track.style.background = state.border ? 'var(--green)' : 'var(--line-strong)';
+    track.style.justifyContent = state.border ? 'flex-end' : 'flex-start';
+    document.getElementById('border-toggle').setAttribute('aria-pressed', String(state.border));
+
+    var docs = [
+      { title: 'Negative Coggins (EIA) test', note: 'Current test results travel with every horse on interstate trips.', color: '#1E5B3F' },
+      { title: 'Health certificate (CVI)', note: 'Issued by your veterinarian shortly before the ship date.', color: '#1E5B3F' },
+      { title: 'Registration or sale papers', note: 'Jockey Club / breed papers or sale documents, as the venue requires.', color: '#1E5B3F' }
+    ];
+    if (state.border) {
+      docs.push({ title: 'USDA-endorsed export health certificate', note: 'Needed for horses leaving the U.S. for Canada; your vet starts the process.', color: '#8A5E17' });
+      docs.push({ title: 'Canadian (CFIA) entry requirements', note: 'Dispatch coordinates border timing and broker paperwork with you.', color: '#8A5E17' });
+    }
+
+    document.getElementById('doc-count').textContent = docs.length + ' items';
+    var list = document.getElementById('doc-list');
+    list.innerHTML = '';
+    docs.forEach(function (doc) {
+      var row = document.createElement('div');
+      row.style.display = 'flex';
+      row.style.gap = '14px';
+      row.style.alignItems = 'flex-start';
+      row.innerHTML =
+        '<span style="width:24px;height:24px;flex-shrink:0;border-radius:7px;border:2px solid ' + doc.color + ';display:flex;align-items:center;justify-content:center;">' +
+        '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="' + doc.color + '" stroke-width="3" stroke-linecap="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>' +
+        '<span style="display:flex;flex-direction:column;gap:3px;">' +
+        '<span class="doc-title" style="font-weight:700;"></span>' +
+        '<span class="doc-note small muted"></span></span>';
+      row.querySelector('.doc-title').textContent = doc.title;
+      row.querySelector('.doc-note').textContent = doc.note;
+      list.appendChild(row);
+    });
+  }
+
+  chipWrap.addEventListener('choice', function (event) { state.dest = event.detail.value; render(); });
+  document.querySelector('[data-choice="kind"]').addEventListener('choice', function (event) { state.kind = event.detail.value; render(); });
+  document.getElementById('horse-plus').addEventListener('click', function () { state.horses = Math.min(state.horses + 1, 12); render(); });
+  document.getElementById('horse-minus').addEventListener('click', function () { state.horses = Math.max(state.horses - 1, 1); render(); });
+  document.getElementById('border-toggle').addEventListener('click', function () { state.border = !state.border; render(); });
+
+  document.getElementById('send-request').addEventListener('click', function () {
+    var d = currentDest();
+    document.getElementById('done-text').textContent =
+      'Our ' + d.office + ' office will call you to confirm space, price and pickup time for ' +
+      horsesLabel() + ' to ' + d.name + '. Need us sooner? Call ' + phones[d.office] + '.';
+    document.getElementById('planner-form').hidden = true;
+    document.getElementById('planner-done').hidden = false;
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+  document.getElementById('plan-again').addEventListener('click', function () {
+    document.getElementById('planner-done').hidden = true;
+    document.getElementById('planner-form').hidden = false;
+  });
+
+  render();
+}());
+</script>
+</body>
+</html>
